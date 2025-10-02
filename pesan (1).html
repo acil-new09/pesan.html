@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pesan Rahasia</title>
+</head>
+<body style="text-align:center; padding-top:50px; font-family:sans-serif;">
+  <a href="#" onclick="tampilPesan()">Klik di sini</a>
+  <p id="pesan" style="display:none; font-size:20px; margin-top:20px;"></p>
+
+  <script>
+    function tampilPesan() {
+      const teks = "woy kontol lu di mana sekarang pantek";
+      document.getElementById("pesan").innerText = teks;
+      document.getElementById("pesan").style.display = "block";
+
+      // Text-to-Speech
+      const suara = new SpeechSynthesisUtterance(teks);
+      suara.lang = "id-ID"; // bahasa Indonesia
+      window.speechSynthesis.speak(suara);
+    }
+  </script>
+</body>
+</html>
